@@ -6,7 +6,6 @@ vocab=/home/maggie/bert-german/vocab/vocab_bert_final_uncased_1000.txt
 
 python3 /home/maggie/bert-german/run_pretraining.py \
 --input_file=/home/maggie/bert-german/tfrecord_lists/dewiki_full_vocab_128_train.csv \
-#--output_dir=gs://deep_speech_bucket/maggie/bert_chkpts/bert_full_vocab/ \
 --output_dir=gs://deep_speech_bucket/maggie/bert_chkpts/test/ \
 --do_train=True \
 --do_eval=True \
