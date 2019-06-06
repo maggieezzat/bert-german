@@ -53,7 +53,7 @@ python3 /home/maggie/bert-german/articles_classifier.py \
 --data_dir=gs://deep_speech_bucket/maggie/articles_data/ \
 --bert_config_file=/home/maggie/bert-german/config/bert_config_uncased.json \
 --vocab_file=/home/maggie/bert-german/vocab/vocab_bert_final_uncased_1000.txt \
---output_dir=gs://deep_speech_bucket/articles_results/articles_512_2K_5e-5/ \
+--output_dir=gs://deep_speech_bucket/maggie/articles_results/articles_512_2K_5e-5/ \
 --do_lower_case=True \
 --do_train=True \
 --do_eval=True \
