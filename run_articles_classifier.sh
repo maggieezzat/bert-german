@@ -50,7 +50,7 @@
 
 
 python3 /home/maggie/bert/articles_classifier.py \
---data_dir=gs://deep_speech_bucket/articles_3/ \
+--data_dir=gs://deep_speech_bucket/maggie/articles_data/ \
 --bert_config_file=/home/maggie/bert/config/bert_config_uncased.json \
 --vocab_file=/home/maggie/bert/vocab/vocab_uncased_1000.txt \
 --output_dir=gs://deep_speech_bucket/articles_uncased_3/ \
