@@ -218,11 +218,11 @@ class MyProcessor(DataProcessor):
       if i == 0:
         continue
       guid = "%s-%s" % (set_type, i)
-      article_text = tokenization.convert_to_unicode(line[3])
+      article_text = tokenization.convert_to_unicode(line[1])
       if set_type == "test":
         label = "Web"
       else:
-        label = tokenization.convert_to_unicode(line[1])
+        label = tokenization.convert_to_unicode(line[0])
       examples.append(
           InputExample(guid=guid, text=article_text, label=label))
     return examples
