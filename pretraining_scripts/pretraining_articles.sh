@@ -4,7 +4,7 @@ export vocab=/home/maggie/bert/vocab_uncased_1000.txt
 vocab=/home/maggie/bert/vocab/vocab_uncased_1000.txt
 
 
-python3 /home/maggie/bert/run_pretraining.py \
+python3 /home/maggie/bert-german/run_pretraining.py \
 --input_file=/home/maggie/bert-german/articles.csv \
 --output_dir=gs://deep_speech_bucket/maggie/bert_chkpts/articles_512/ \
 --do_train=True \
