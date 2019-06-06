@@ -1,7 +1,5 @@
 #!/bin/bash
 
-export vocab=/home/maggie/bert/vocab_uncased_1000.txt
-vocab=/home/maggie/bert/vocab/vocab_uncased_1000.txt
 
 
 python3 /home/maggie/bert-german/run_pretraining.py \

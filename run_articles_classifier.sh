@@ -51,14 +51,14 @@
 
 python3 /home/maggie/bert/articles_classifier.py \
 --data_dir=gs://deep_speech_bucket/maggie/articles_data/ \
---bert_config_file=/home/maggie/bert/config/bert_config_uncased.json \
---vocab_file=/home/maggie/bert/vocab/vocab_uncased_1000.txt \
---output_dir=gs://deep_speech_bucket/articles_uncased_3/ \
---do_lower_case=False \
+--bert_config_file=/home/maggie/bert-german/config/bert_config_uncased.json \
+--vocab_file=/home/maggie/bert-german/vocab/vocab_bert_final_uncased_1000.txt \
+--output_dir=gs://deep_speech_bucket/articles_results/articles_512_2K_5e-5/ \
+--do_lower_case=True \
 --do_train=True \
 --do_eval=True \
 --do_predict=False \
 --use_tpu=True \
 --tpu_name=$TPU_NAME \
---init_checkpoint=gs://deep_speech_bucket/bert_checkpoints/my_uncased_model
+--init_checkpoint=gs://deep_speech_bucket/maggie/bert_chkpts/articles_512_2K_5e-5/
 
