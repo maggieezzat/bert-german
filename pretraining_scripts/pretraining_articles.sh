@@ -5,7 +5,7 @@ vocab=/home/maggie/bert/vocab/vocab_uncased_1000.txt
 
 
 python3 /home/maggie/bert-german/run_pretraining.py \
---input_file=/home/maggie/bert-german/tfrecord_lists/articles_512 \
+--input_file=/home/maggie/bert-german/tfrecord_lists/articles_512.csv \
 --output_dir=gs://deep_speech_bucket/maggie/bert_chkpts/articles_512_2K_5e-5/ \
 --do_train=True \
 --do_eval=True \
