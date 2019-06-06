@@ -20,4 +20,4 @@ python3 /home/maggie/bert-german/run_pretraining.py \
 --use_tpu=True \
 --tpu_name=$TPU_NAME \
 --tpu_zone=us-central1-f
---init_checkpoint=gs://deep_speech_bucket/maggie/bert_chkpts/bert/model.ckpt-90000	
+--init_checkpoint=gs://deep_speech_bucket/maggie/bert_chkpts/bert/model.ckpt-90000.data-00000-of-00001	
