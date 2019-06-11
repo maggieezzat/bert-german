@@ -12,7 +12,7 @@ python3 /home/maggie/bert-german/run_pretraining.py \
 --train_batch_size=128 \
 --max_seq_length=512 \
 --max_predictions_per_seq=77 \
---num_train_steps=20000 \
+--num_train_steps=30000 \
 --num_warmup_steps=1000 \
 --learning_rate=5e-5 \
 --use_tpu=True \
