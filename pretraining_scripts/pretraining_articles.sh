@@ -4,7 +4,7 @@
 
 python3 /home/maggie/bert-german/run_pretraining.py \
 --input_file=/home/maggie/bert-german/tfrecord_lists/articles_512.csv \
---output_dir=gs://deep_speech_bucket/maggie/bert_chkpts/articles_512_20K_5e-5/ \
+--output_dir=gs://deep_speech_bucket/maggie/bert_chkpts/articles_512_30K_5e-5/ \
 --do_train=True \
 --do_eval=True \
 --do_lower=True \
