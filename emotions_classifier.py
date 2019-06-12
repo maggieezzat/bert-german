@@ -193,12 +193,12 @@ class MyProcessor(DataProcessor):
   def get_train_examples(self, data_dir):
     """See base class."""
     return self._create_examples(
-        self._read_tsv(os.path.join(data_dir, "train.tsv")), "train")
+        self._read_tsv(os.path.join(data_dir, "tweets-train.tsv")), "train")
 
   def get_dev_examples(self, data_dir):
     """See base class."""
     return self._create_examples(
-        self._read_tsv(os.path.join(data_dir, "dev.tsv")), "dev")
+        self._read_tsv(os.path.join(data_dir, "tweets-test.tsv")), "dev")
 
   def get_test_examples(self, data_dir):
     """See base class."""
@@ -207,7 +207,8 @@ class MyProcessor(DataProcessor):
   
   def get_labels(self):
     """See base class."""
-    return ["Positive", "Neutral", "Negative", "None"]
+    return ["Positive", "Neutral", "Negative"]
+    #, "None"]
 
   def _create_examples(self, lines, set_type):
     """Creates examples for the training and dev sets."""
@@ -216,13 +217,13 @@ class MyProcessor(DataProcessor):
       if i == 0:
         continue
       guid = "%s-%s" % (set_type, i)
-      article_text = tokenization.convert_to_unicode(line[3])
+      tweet_text = tokenization.convert_to_unicode(line[1])
       if set_type == "test":
-        label = "None"
+        label = "Neutral"
       else:
-        label = tokenization.convert_to_unicode(line[1])
+        label = tokenization.convert_to_unicode(line[0])
       examples.append(
-          InputExample(guid=guid, text=article_text, label=label))
+          InputExample(guid=guid, text=tweet_text, label=label))
     return examples
 
 
@@ -243,13 +244,13 @@ def convert_single_example(ex_index, example, label_list, max_seq_length,
   for (i, label) in enumerate(label_list):
     label_map[label] = i
 
-  tokens_article = tokenizer.tokenize(example.text)
+  tokens_tweet = tokenizer.tokenize(example.text)
 
   # Modifies `tokens` in place so that the total
   # length is less than the specified length.
   # Account for [CLS] and [SEP] with "- 2"
-  if len(tokens_article) > max_seq_length - 2:
-    tokens_article = tokens_article[0:(max_seq_length - 2)]
+  if len(tokens_tweet) > max_seq_length - 2:
+    tokens_tweet = tokens_tweet[0:(max_seq_length - 2)]
 
   # The convention in BERT is:
   # (a) For sequence pairs:
@@ -273,7 +274,7 @@ def convert_single_example(ex_index, example, label_list, max_seq_length,
   segment_ids = []
   tokens.append("[CLS]")
   segment_ids.append(0)
-  for token in tokens_article:
+  for token in tokens_tweet:
     tokens.append(token)
     segment_ids.append(0)
   tokens.append("[SEP]")
