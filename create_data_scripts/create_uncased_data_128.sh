@@ -1,6 +1,6 @@
 #!/bin/bash
 
-[ -d /home/maggie/tfrecords ] || mkdir /home/maggie/tfrecords
+[ -d /bert/tfrecords ] || mkdir /bert/tfrecords
 
 csv=/bert/dewiki_csv_files/
 out=/bert/tfrecords/
