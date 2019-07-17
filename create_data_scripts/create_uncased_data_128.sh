@@ -4,7 +4,7 @@
 
 csv=/bert/dewiki_csv_files/
 out=/bert/tfrecords/
-vocab=/bert/bert-german/vocab/bert_vocab_lower_500_wiki.txt
+vocab=/bert/bert-german/vocab/bert_vocab_lower_800_wiki.txt
 
 echo $csv
 echo $out
