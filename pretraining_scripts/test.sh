@@ -1,7 +1,11 @@
 #!/bin/bash
 
-
-python3 /bert/bert-german/run_pretraining.py \
+mpirun -np 4 \
+-H localhost:4 \
+-bind-to none -map-by slot \
+-x NCCL_DEBUG=INFO -x LD_LIBRARY_PATH -x PATH \
+-mca pml ob1 -mca btl ^openib \
+python /bert/bert-german/run_pretraining.py \
 --input_file=/bert/bert-german/tfrecord_lists/test.csv \
 --output_dir=/bert/test_out/ \
 --do_train=True \
